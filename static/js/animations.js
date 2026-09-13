@@ -1,35 +1,9 @@
 export function initAnimations() {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const elements = document.querySelectorAll('.reveal');
-
-    if (prefersReducedMotion) {
-        elements.forEach(el => el.classList.add('is-visible'));
-        return;
-    }
-
-    // Hero elements reveal immediately
-    const heroElements = document.querySelectorAll('#hero .reveal');
-    heroElements.forEach((el, index) => {
-        setTimeout(() => {
-            el.classList.add('is-visible');
-        }, 50 + (index * 100)); // Staggered reveal
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-
-    elements.forEach(el => {
-        if (!el.closest('#hero')) {
-            observer.observe(el);
-        }
-    });
+  const preference=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const elements=[...document.querySelectorAll('.reveal')];
+  if(preference.matches)return;
+  document.documentElement.classList.add('js-motion');
+  const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}});},{threshold:.06,rootMargin:'0px 0px -15px 0px'});
+  elements.forEach(element=>observer.observe(element));
+  preference.addEventListener('change',event=>{if(event.matches){document.documentElement.classList.remove('js-motion');elements.forEach(element=>element.classList.add('is-visible'));observer.disconnect();}});
 }

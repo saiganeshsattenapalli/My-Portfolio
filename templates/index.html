@@ -1,258 +1,368 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Saiganesh Sattenapalli — AI Research Engineer">
-    <title>Saiganesh Sattenapalli — Curiora</title>
-    
-    <!-- CSS Architecture -->
-    <link rel="stylesheet" href="/static/css/design-system.css">
-    <link rel="stylesheet" href="/static/css/base.css">
-    <link rel="stylesheet" href="/static/css/components.css">
-    <link rel="stylesheet" href="/static/css/animations.css">
-    <link rel="stylesheet" href="/static/css/portfolio.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1010">
+  <meta name="description"
+    content="Saiganesh Sattenapalli — computer science student building with data, machine learning and local AI. Explore Curiora projects, skills, philosophy and resume.">
+  <meta property="og:title" content="Saiganesh Sattenapalli — Curiosity, engineered.">
+  <meta property="og:description"
+    content="Data. Models. Meaning. A portfolio of practical AI experiments and thoughtful software systems.">
+  <meta property="og:type" content="website">
+  <title>Saiganesh Sattenapalli — Curiosity, engineered.</title>
+  <link rel="icon" href="/static/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/portfolio.css">
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Saiganesh, home"><span class="brand-symbol"
+        aria-hidden="true">s<span>g</span></span><span class="brand-name">saiganesh<span
+          class="brand-dot">.</span></span></a>
+    <nav class="desktop-nav" aria-label="Main navigation"><a href="#work">Work</a><a
+        href="#capabilities">Capabilities</a><a href="#philosophy">Philosophy</a><a href="#about">About</a></nav>
+    <div class="header-actions"><a class="resume-nav" href="/resume" target="_blank">Resume <span
+          aria-hidden="true">↗</span></a><button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav"
+        aria-label="Open navigation"><span></span><span></span></button></div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#work">Work</a><a
+        href="#capabilities">Capabilities</a><a href="#philosophy">Philosophy</a><a href="#about">About</a><a
+        href="#contact">Contact</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero section-dark" id="home" aria-labelledby="hero-title">
+      <div class="hero-grid page-width">
+        <div class="hero-copy">
+          <div class="eyebrow hero-eyebrow"><span class="status-dot"></span> DATA · MACHINE LEARNING · AI</div>
+          <h1 id="hero-title">Curiosity,<br><span class="serif-word">engineered.</span></h1>
+          <p class="hero-intro">I’m Saiganesh. I turn questions into code,<br class="desktop-break"> data into
+            understanding, and ideas into systems.</p>
+          <p class="hero-role">Computer science student. Builder of Curiora.<br>Exploring opportunities in data, ML & AI
+            engineering.</p>
+          <div class="hero-actions"><a class="button button-mint" href="#work">Explore my work <span
+                aria-hidden="true">↘</span></a><a class="text-link" href="https://github.com/saiganeshsattenapalli"
+              target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <div class="hero-art" id="curioraSignature">
+          <div class="scene-halo" aria-hidden="true"></div>
+          <canvas id="signature-canvas" aria-label="Interactive three-dimensional Curiora orbital sculpture"
+            role="img"></canvas>
+          <div class="signature-fallback" aria-hidden="true">
+            <div class="signature-orbit orbit-a"></div>
+            <div class="signature-orbit orbit-b"></div>
+          </div>
+          <div class="signature-glass" aria-hidden="true">
+            <div class="chip-topline"><span class="chip-mark">c.</span><span>INTELLIGENCE<br>IN THE MAKING</span></div>
+            <span class="signature-word">CURIO</span>
+            <div class="chip-bottomline"><span>curiosity creates intelligence</span><i></i></div>
+          </div>
+          <span class="orbit-label label-data" aria-hidden="true"><i></i> DATA</span><span
+            class="orbit-label label-models" aria-hidden="true"><i></i> MODELS</span><span
+            class="orbit-label label-systems" aria-hidden="true"><i></i> SYSTEMS</span>
+          <div class="scene-caption"><span><i></i> THE CURIORA SIGNATURE</span><span class="pointer-hint">Move to
+              explore</span><button id="motion-toggle" aria-pressed="false" aria-label="Pause animation"><span
+                aria-hidden="true">Ⅱ</span></button></div>
+        </div>
+      </div>
+      <div class="hero-footer page-width"><span>BASED IN HYDERABAD, INDIA</span><a href="#work">A little curiosity goes
+          a long way <span aria-hidden="true">↓</span></a><span>PORTFOLIO / 2026</span></div>
+    </section>
 
-    <!-- CSS-only Atmospheric Breathing Layers -->
-    <div class="atmosphere" aria-hidden="true">
-        <div class="atmosphere-layer layer-1"></div>
-        <div class="atmosphere-layer layer-2"></div>
+    <section id="work" class="work section-light section-space" aria-labelledby="work-title">
+      <div class="page-width">
+        <div class="section-kicker"><span>01 / SELECTED WORK</span><span>BUILT TO LEARN. BUILT TO MATTER.</span></div>
+        <div class="section-heading">
+          <h2 id="work-title">Ideas made<br><span class="serif-word">tangible.</span></h2>
+          <p>Real code. Useful experiments.<br>A growing body of work at the intersection<br>of intelligence and human
+            experience.</p>
+        </div>
+        <div class="work-toolbar">
+          <p>THE CURIORA ECOSYSTEM <span>+ EXPLORATIONS</span></p>
+          <div class="project-filters" role="group" aria-label="Filter projects"><button class="active"
+              data-filter="all" aria-pressed="true">All work</button><button data-filter="data"
+              aria-pressed="false">Data</button><button data-filter="ml" aria-pressed="false">ML</button><button
+              data-filter="ai" aria-pressed="false">AI</button></div>
+        </div>
+        <p class="sr-only" id="filter-status" aria-live="polite"></p>
+        <div class="project-grid">
+          <article class="project-card flagship reveal" data-categories="ai ml" id="campus-project">
+            <div class="project-visual campus-visual" aria-label="Curiora CampusOS interface concept">
+              <div class="visual-caption"><span>CURIORA / CAMPUSOS</span><span>INTERFACE STUDY</span></div>
+              <div class="campus-window">
+                <div class="window-bar"><span class="window-dots"><i></i><i></i><i></i></span><span>curio / intelligence
+                    workspace</span><span>↗</span></div>
+                <div class="window-body">
+                  <div class="window-side"><b>c.</b><span class="selected">◈</span><span>▧</span><span>⊙</span></div>
+                  <div class="window-content">
+                    <p class="mini-eyebrow">YOUR CURIOSITY. AMPLIFIED.</p>
+                    <h4>What will you<br>understand today?</h4>
+                    <div class="mini-prompt">Help me make sense of this image <span>↗</span></div>
+                    <div class="model-row"><span><i></i> Text + vision</span><span>Local inference</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="floating-model"><span class="mini-node">◈</span>
+                <div><b>One thoughtful system.</b><span>Text. Vision. Context.</span></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-overline"><span>01 / AI ENGINEERING</span><span
+                  class="project-status">Prototype</span></div>
+              <h3>Curiora CampusOS<span class="project-number">↗</span></h3>
+              <p>A campus platform with Curio at its core: local text and vision, a shared model gateway, and a
+                conversation-aware interface.</p>
+              <div class="tag-list"><span>Python</span><span>FastAPI</span><span>MLX</span><span>Multimodal AI</span>
+              </div>
+              <div class="project-actions"><button class="case-link" data-project="campus">Inside the project
+                  <span>↗</span></button><a href="https://github.com/saiganeshsattenapalli/Curiora-CampusOS"
+                  target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+            </div>
+          </article>
+          <article class="project-card reveal" data-categories="data ml" id="pay-project">
+            <div class="project-visual pay-visual">
+              <div class="visual-caption"><span>CURIORA / PAY</span><span>WORKFLOW STUDY</span></div>
+              <div class="pay-stack">
+                <div class="pay-card back-card"></div>
+                <div class="pay-card front-card">
+                  <div><span class="pay-logotype">curiora <b>pay</b></span><span>◈</span></div>
+                  <p>Better systems.<br>Clearer decisions.</p>
+                  <div class="pay-card-footer"><span>DATA → INSIGHT</span><span>↗</span></div>
+                </div>
+              </div>
+              <div class="pay-label"><i></i> PYTHON + POSTGRESQL</div>
+            </div>
+            <div class="project-content">
+              <div class="project-overline"><span>02 / DATA & BACKEND</span><span
+                  class="project-status">Prototype</span></div>
+              <h3>Curiora Pay<span class="project-number">↗</span></h3>
+              <p>A financial workflow prototype connecting SQL data, Python services, CSV reporting, and an experimental
+                loan classifier.</p>
+              <div class="tag-list"><span>PostgreSQL</span><span>pandas</span><span>scikit-learn</span></div>
+              <div class="project-actions"><button class="case-link" data-project="pay">Inside the project
+                  <span>↗</span></button><a href="https://github.com/Curiora-intelligence/Curiora-Pay" target="_blank"
+                  rel="noopener noreferrer">GitHub ↗</a></div>
+            </div>
+          </article>
+          <article class="project-card reveal" data-categories="ai" id="research-project">
+            <div class="project-visual research-visual">
+              <div class="visual-caption"><span>CURIORA / RESEARCH</span><span>VISION EXPLORATION</span></div>
+              <div class="vision-art" aria-hidden="true">
+                <div class="vision-grid"></div>
+                <div class="vision-target"><span></span><span></span><span></span><span></span>
+                  <div class="vision-orb"></div>
+                </div><span class="vision-label">PERCEIVE → UNDERSTAND</span>
+              </div>
+              <div class="research-label">A closer look at intelligence.</div>
+            </div>
+            <div class="project-content">
+              <div class="project-overline"><span>03 / APPLIED AI EXPLORATION</span><span
+                  class="project-status">Experiment</span></div>
+              <h3>Curiora Research<span class="project-number">↗</span></h3>
+              <p>Exploring local vision-language inference with Qwen and MLX: how can a model turn an image into useful
+                context?</p>
+              <div class="tag-list"><span>Qwen VL</span><span>MLX</span><span>Python</span></div>
+              <div class="project-actions"><button class="case-link" data-project="research">Inside the project
+                  <span>↗</span></button><a href="https://github.com/saiganeshsattenapalli/Curiora-Research"
+                  target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+            </div>
+          </article>
+          <article class="project-card compact-project reveal" data-categories="data ml" id="foundations-project">
+            <div class="foundation-mark" aria-hidden="true"><span>{</span> f(x) <span>}</span></div>
+            <div class="project-content">
+              <div class="project-overline"><span>04 / LEARNING IN PUBLIC</span><span
+                  class="project-status">Practice</span></div>
+              <h3>The foundations matter.</h3>
+              <p>Python problem solving, data preparation, logistic regression, and the habit of understanding what the
+                code is actually doing.</p>
+              <div class="tag-list"><span>Python</span><span>NumPy</span><span>pandas</span><span>Feature
+                  preparation</span></div>
+              <div class="project-actions"><button class="case-link" data-project="foundations">Explore the practice
+                  <span>↗</span></button><a href="https://github.com/saiganeshsattenapalli" target="_blank"
+                  rel="noopener noreferrer">GitHub profile ↗</a></div>
+            </div>
+          </article>
+        </div>
+        <div class="ecosystem-note">
+          <div><span class="section-kicker">ONE CONNECTED ECOSYSTEM</span>
+            <h3>Different questions.<br>A shared way of building.</h3>
+          </div>
+          <div>
+            <p>CampusOS explores useful AI interfaces. Pay connects workflows and data. Research makes room for
+              experiments. A shared design language brings the ideas together.</p>
+            <div class="ecosystem-links"><a href="https://github.com/saiganeshsattenapalli/Curiora-Design-System"
+                target="_blank" rel="noopener noreferrer">Curiora Design System ↗</a><a
+                href="https://github.com/saiganeshsattenapalli/Curiora-Website" target="_blank"
+                rel="noopener noreferrer">Curiora Website ↗</a></div>
+          </div>
+        </div>
+        <div class="work-footnote"><span>Always evolving. Each project is a step toward a deeper understanding.</span><a
+            href="https://github.com/saiganeshsattenapalli" target="_blank" rel="noopener noreferrer">Explore all
+            repositories <span>↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="capabilities section-dark section-space" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="page-width">
+        <div class="section-kicker"><span>02 / CAPABILITIES</span><span>THREE DIRECTIONS. ONE CURIOUS MIND.</span></div>
+        <div class="section-heading">
+          <h2 id="capabilities-title">Connect the dots.<br><span class="serif-word">Then build.</span></h2>
+          <p>My foundation is Python and software systems.<br>I’m developing it toward three closely<br>connected
+            disciplines.</p>
+        </div>
+        <div class="capability-layout">
+          <div class="role-tabs" role="tablist" aria-label="Explore skills by role" aria-orientation="vertical"><button
+              role="tab" id="tab-data" aria-controls="panel-data" aria-selected="false" tabindex="-1"><span>01</span>
+              <div>Data Analyst<small>Ask better questions.</small></div><b>↗</b>
+            </button><button role="tab" id="tab-ml" aria-controls="panel-ml" aria-selected="false"
+              tabindex="-1"><span>02</span>
+              <div>ML Engineer<small>Learn from the patterns.</small></div><b>↗</b>
+            </button><button role="tab" id="tab-ai" aria-controls="panel-ai" aria-selected="true"
+              tabindex="0"><span>03</span>
+              <div>AI Engineer<small>Make intelligence useful.</small></div><b>↗</b>
+            </button></div>
+          <div class="role-panels">
+            <div role="tabpanel" id="panel-data" aria-labelledby="tab-data" hidden tabindex="0"><span
+                class="panel-kicker">FROM RAW DATA TO A CLEARER PICTURE</span>
+              <h3>Find the signal.<br>Explain what it means.</h3>
+              <p>I work with Python and SQL to retrieve, transform, and export structured data, then connect the output
+                to an actual question.</p>
+              <div class="skill-chips"><span>Python</span><span>SQL /
+                  PostgreSQL</span><span>pandas</span><span>NumPy</span><span>CSV workflows</span></div>
+              <div class="skill-evidence"><span>IN PRACTICE</span>
+                <p>Curiora Pay connects database queries to pandas dataframes and CSV statement generation.</p><a
+                  href="#pay-project">View the evidence ↗</a>
+              </div>
+              <p class="learning-note"><span>DEVELOPING NEXT</span> Statistical analysis, clearer visual storytelling,
+                and deeper exploratory analysis.</p>
+            </div>
+            <div role="tabpanel" id="panel-ml" aria-labelledby="tab-ml" hidden tabindex="0"><span
+                class="panel-kicker">FROM AN IDEA TO A TESTABLE BASELINE</span>
+              <h3>Understand the model.<br>Respect its limits.</h3>
+              <p>I’m developing hands-on ML foundations through small classification experiments, feature preparation,
+                and model integration.</p>
+              <div class="skill-chips"><span>scikit-learn</span><span>Logistic regression</span><span>Feature
+                  preparation</span><span>Python</span><span>Model serialization</span></div>
+              <div class="skill-evidence"><span>IN PRACTICE</span>
+                <p>Curiora Pay includes a logistic-regression experiment trained on a small synthetic dataset. It is a
+                  learning exercise, not a validated lending model.</p><a href="#pay-project">Explore the experiment
+                  ↗</a>
+              </div>
+              <p class="learning-note"><span>DEVELOPING NEXT</span> Reliable evaluation, stronger datasets, and
+                reproducible training pipelines.</p>
+            </div>
+            <div role="tabpanel" id="panel-ai" aria-labelledby="tab-ai" tabindex="0"><span class="panel-kicker">FROM
+                MODEL CAPABILITY TO USEFUL SOFTWARE</span>
+              <h3>Intelligence needs<br>thoughtful systems.</h3>
+              <p>I build around models: interfaces, runtime adapters, input handling, and the glue that turns inference
+                into an experience.</p>
+              <div class="skill-chips"><span>FastAPI</span><span>MLX</span><span>Local LLM
+                  inference</span><span>Vision-language models</span><span>Runtime integration</span></div>
+              <div class="skill-evidence"><span>IN PRACTICE</span>
+                <p>Curio connects text and vision through one model gateway, with MLX, CUDA, and CPU runtime adapters.
+                </p><a href="#campus-project">Meet Curio ↗</a>
+              </div>
+              <p class="learning-note"><span>DEVELOPING NEXT</span> Model evaluation, efficient inference, and robust
+                agent workflows.</p>
+            </div>
+          </div>
+        </div>
+        <div class="toolbelt"><span>THE EVERYDAY TOOLKIT</span>
+          <p>Python <i>/</i> Git & GitHub <i>/</i> FastAPI <i>/</i> SQL <i>/</i> HTML · CSS · JavaScript</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="philosophy section-light section-space" id="philosophy" aria-labelledby="philosophy-title">
+      <div class="page-width">
+        <div class="section-kicker"><span>03 / PHILOSOPHY</span><span>THE THINKING BEHIND THE BUILDING</span></div>
+        <div class="philosophy-intro">
+          <h2 id="philosophy-title">I don’t just want to use AI.<br>I want to understand<br><span class="serif-word">how
+              it works.</span></h2>
+          <div class="philosophy-aside"><span class="asterisk" aria-hidden="true">✳</span>
+            <p>Curiora starts with a simple belief:<br><strong>curiosity creates intelligence.</strong></p>
+          </div>
+        </div>
+        <div class="principles">
+          <article class="reveal"><span>01</span>
+            <h3>Build to understand.</h3>
+            <p>A working prototype makes a question concrete. I learn by taking ideas apart, rebuilding them, and seeing
+              where they break.</p>
+          </article>
+          <article class="reveal"><span>02</span>
+            <h3>Think in systems.</h3>
+            <p>I build Curiora one connected slice at a time. Data, runtime, and interface work together, and each
+              experiment informs the wider ecosystem.</p>
+          </article>
+          <article class="reveal"><span>03</span>
+            <h3>Keep people in view.</h3>
+            <p>I want technical complexity to become something useful: a clearer answer, a simpler workflow, a better
+              experience.</p>
+          </article>
+          <article class="reveal"><span>04</span>
+            <h3>Stay honest. Stay curious.</h3>
+            <p>An experiment is a starting point. I make room for what I haven’t learned yet, and let that guide the
+              next iteration.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section-light" id="about" aria-labelledby="about-title">
+      <div class="page-width about-grid">
+        <div class="about-monogram" aria-hidden="true">
+          <div class="monogram-orbit"></div><span>sg<span>.</span></span>
+          <p>ALWAYS A WORK IN PROGRESS.</p>
+        </div>
+        <div class="about-copy"><span class="section-kicker">04 / THE PERSON BEHIND THE PROJECTS</span>
+          <h2 id="about-title">Hi, I’m<br><span class="serif-word">Saiganesh.</span></h2>
+          <p>I’m a second-year Computer Science (AI & ML) student at Malla Reddy College of Engineering in Hyderabad,
+            expected to graduate in 2029.</p>
+          <p>Curiora is where I explore my questions through software — from local AI and campus tools to data workflows
+            and small ML experiments. The common thread is wanting to understand the system beneath the surface.</p>
+          <div class="about-facts">
+            <div><span>BASED IN</span><strong>Hyderabad, India</strong></div>
+            <div><span>EDUCATION</span><strong>B.Tech · CSE (AI & ML)</strong></div>
+          </div><a class="button button-dark" href="/resume" target="_blank">Read my resume <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section-dark section-space" id="contact" aria-labelledby="contact-title">
+      <div class="page-width">
+        <div class="section-kicker"><span>05 / WHAT’S NEXT</span><span><i class="status-dot"></i> OPEN TO
+            OPPORTUNITIES</span></div>
+        <div class="contact-body">
+          <p>Data analyst · ML engineer · AI engineer</p>
+          <h2 id="contact-title">Let’s build something<br><span class="serif-word">worth understanding.</span></h2><a
+            class="email-link" href="mailto:saiganeshsattenapalli26@gmail.com">Say hello <span>↗</span></a><span
+            class="contact-email">saiganeshsattenapalli26@gmail.com</span>
+        </div>
+        <div class="contact-links"><a href="/resume" target="_blank">View resume <span>↗</span></a><a
+            href="/static/downloads/saiganesh-sattenapalli-resume.pdf" download>Download PDF <span>↓</span></a><a
+            href="https://github.com/saiganeshsattenapalli" target="_blank" rel="noopener noreferrer">GitHub
+            <span>↗</span></a><a href="https://github.com/saiganeshsattenapalli/My-Portfolio" target="_blank"
+            rel="noopener noreferrer">Portfolio source <span>↗</span></a></div>
+        <footer><a class="brand" href="#home"><span class="brand-name">saiganesh<span
+                class="brand-dot">.</span></span></a>
+          <p>Curiosity creates intelligence.</p><span>© 2026 SAIGANESH SATTENAPALLI</span><a href="#home">Back to top
+            ↑</a>
+        </footer>
+      </div>
+    </section>
+  </main>
+  <dialog id="project-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-shell"><button class="dialog-close" aria-label="Close project details">×</button><span
+        class="dialog-kicker" id="dialog-kicker"></span>
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-summary"></p>
+      <div id="dialog-content"></div><a id="dialog-github" class="button button-dark" target="_blank"
+        rel="noopener noreferrer">Explore on GitHub <span>↗</span></a>
     </div>
-
-    <!-- Navigation -->
-    <header class="site-nav">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <strong>CURIORA</strong>
-                <span>by Saiganesh</span>
-            </div>
-            
-            <nav class="nav-links">
-                <a href="#origin">About</a>
-                <a href="#curio">Curio</a>
-                <a href="#ecosystem">Ecosystem</a>
-                <a href="#research">Research</a>
-                <a href="#journey">Journey</a>
-            </nav>
-
-            <a href="#curio" class="nav-cta">Curio ↗</a>
-            
-            <button class="nav-hamburger" aria-label="Toggle Menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="section hero-section">
-            <div class="container hero-grid">
-                <div class="hero-content">
-                    <p class="hero-eyebrow reveal">AI RESEARCH · SYSTEMS · BUILDING</p>
-                    <h1 class="hero-title reveal">I build to understand<br>intelligence.</h1>
-                    <p class="hero-desc reveal">I'm Saiganesh — an aspiring AI research engineer moving from software fundamentals toward machine learning, intelligent systems, and the research behind them.</p>
-                    <div class="hero-actions reveal">
-                        <a href="#curio" class="button-primary">Explore Curio ↗</a>
-                        <a href="https://github.com/saiganeshsattenapalli" target="_blank" rel="noreferrer" class="button-secondary">GitHub ↗</a>
-                    </div>
-                </div>
-                
-                <div class="hero-visual reveal" aria-hidden="true">
-                    <div class="visual-system">
-                        <div class="orbit orbit-1"></div>
-                        <div class="orbit orbit-2"></div>
-                        <div class="orbit orbit-3"></div>
-                        <div class="node-center"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Origin Section -->
-        <section id="origin" class="section">
-            <div class="container">
-                <div class="section-label reveal">
-                    <span class="num">01</span>
-                    <span class="title">Origin</span>
-                </div>
-                
-                <h2 class="origin-statement reveal">
-                    I don't want to only use AI.<br>
-                    I want to understand how it works.
-                </h2>
-                
-                <div class="origin-flow reveal">
-                    <span>Software Fundamentals</span> <span class="arrow">→</span>
-                    <span>Backend</span> <span class="arrow">→</span>
-                    <span>Machine Learning</span> <span class="arrow">→</span>
-                    <span>Deep Learning</span> <span class="arrow">→</span>
-                    <span>Transformers</span> <span class="arrow">→</span>
-                    <span>Multimodal Systems</span> <span class="arrow">→</span>
-                    <span>Agentic AI</span> <span class="arrow">→</span>
-                    <strong style="color: var(--color-text);">Research</strong>
-                </div>
-            </div>
-        </section>
-
-        <!-- Flagship / Curio -->
-        <section id="curio" class="section">
-            <div class="container">
-                <div class="section-label reveal">
-                    <span class="num">02</span>
-                    <span class="title">Flagship</span>
-                </div>
-
-                {% for project in projects %}
-                {% if project.featured %}
-                <div class="glass-panel flagship-stage reveal">
-                    
-                    <div class="arch-diagram">
-                        <div class="arch-node">PERCEPTION</div>
-                        <div class="arch-arrow">↓</div>
-                        <div class="arch-node">REASONING</div>
-                        <div class="arch-arrow">↓</div>
-                        <div class="arch-node arch-core">CURIO</div>
-                        <div class="arch-arrow">↓</div>
-                        <div class="arch-node">ACTION</div>
-                        <div class="arch-arrow">↓</div>
-                        <div class="arch-node">VERIFY</div>
-                    </div>
-
-                    <div class="flagship-content">
-                        <div class="flagship-meta">
-                            <span class="flagship-essence">{{ project.essence }}</span>
-                            <span class="status-badge" style="margin-left: 12px;">{{ project.status }}</span>
-                        </div>
-                        <h3 class="flagship-title">{{ project.name }}</h3>
-                        <h4 class="flagship-subtitle">An intelligence system.</h4>
-                        <p class="flagship-desc">{{ project.description }}</p>
-                        
-                        <div class="tag-list">
-                            {% for tag in project.tags %}
-                            <span class="tag">{{ tag }}</span>
-                            {% endfor %}
-                        </div>
-                    </div>
-
-                </div>
-                {% endif %}
-                {% endfor %}
-            </div>
-        </section>
-
-        <!-- Ecosystem Section -->
-        <section id="ecosystem" class="section">
-            <div class="container">
-                <div class="section-label reveal">
-                    <span class="num">03</span>
-                    <span class="title">Ecosystem</span>
-                </div>
-                
-                <h2 class="ecosystem-headline reveal">One idea.<br>Many directions.</h2>
-                
-                <div class="editorial-rows">
-                    {% for project in projects %}
-                    {% if not project.featured %}
-                    <article class="eco-row reveal">
-                        <div class="eco-index">0{{ loop.index }}</div>
-                        <div class="eco-content">
-                            <h4>{{ project.name }}</h4>
-                            <span class="eco-essence">{{ project.essence }}</span>
-                        </div>
-                        <div class="eco-desc">
-                            <p>{{ project.description }}</p>
-                            <div class="tag-list" style="margin-top: 16px;">
-                                <span class="status-badge">{{ project.status }}</span>
-                            </div>
-                        </div>
-                    </article>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
-
-        <!-- Research Section -->
-        <section id="research" class="section">
-            <div class="container">
-                <div class="section-label reveal">
-                    <span class="num">04</span>
-                    <span class="title">Research</span>
-                </div>
-                
-                <h2 class="research-headline reveal">The questions<br>come first.</h2>
-
-                <div class="research-grid">
-                    {% for item in research %}
-                    <article class="res-row reveal">
-                        <div class="res-index">0{{ loop.index }}</div>
-                        <h3 class="res-topic">{{ item.topic }}</h3>
-                        <p class="res-desc">{{ item.description }}</p>
-                    </article>
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
-
-        <!-- Journey Section -->
-        <section id="journey" class="section">
-            <div class="container">
-                <div class="section-label reveal">
-                    <span class="num">05</span>
-                    <span class="title">Journey</span>
-                </div>
-                
-                <div class="journey-grid reveal">
-                    <div class="journey-group">
-                        <h4>FOUNDATION</h4>
-                        <ul>
-                            <li>Python</li>
-                            <li>Backend</li>
-                        </ul>
-                    </div>
-                    <div class="journey-group">
-                        <h4>INTELLIGENCE</h4>
-                        <ul>
-                            <li>Machine Learning</li>
-                            <li>Deep Learning</li>
-                            <li>Transformers</li>
-                        </ul>
-                    </div>
-                    <div class="journey-group">
-                        <h4>SYSTEMS</h4>
-                        <ul>
-                            <li>Multimodal</li>
-                            <li>Agentic AI</li>
-                            <li>On-device AI</li>
-                        </ul>
-                    </div>
-                    <div class="journey-group">
-                        <h4>RESEARCH</h4>
-                        <ul>
-                            <li>AI Research</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <strong>CURIORA</strong>
-                <span>by Saiganesh</span>
-            </div>
-            <div class="footer-links">
-                <a href="https://github.com/saiganeshsattenapalli" target="_blank" rel="noreferrer">GitHub</a>
-                <a href="https://www.linkedin.com/in/saiganesh-sattenapalli-23b183373/">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-
-    <script type="module" src="/static/js/app.js"></script>
+  </dialog>
+  <script type="module" src="/static/js/app.js"></script>
 </body>
+
 </html>

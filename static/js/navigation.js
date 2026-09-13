@@ -1,59 +1,15 @@
 export function initNavigation() {
-    const nav = document.querySelector('.site-nav');
-    const toggle = document.querySelector('.nav-hamburger');
-    const links = document.querySelector('.nav-links');
-    const linkItems = document.querySelectorAll('.nav-links a');
-
-    // Scroll state for translucent background strength
-    if (nav) {
-        const handleScroll = () => {
-            if (window.scrollY > 20) {
-                nav.classList.add('is-scrolled');
-            } else {
-                nav.classList.remove('is-scrolled');
-            }
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        handleScroll();
-    }
-
-    // Mobile menu toggle
-    if (toggle && links) {
-        const toggleMenu = () => {
-            const isOpen = toggle.classList.toggle('is-open');
-            links.classList.toggle('is-open');
-            document.body.style.overflow = isOpen ? 'hidden' : '';
-        };
-
-        toggle.addEventListener('click', toggleMenu);
-
-        // Close on link click
-        linkItems.forEach(link => {
-            link.addEventListener('click', () => {
-                if (toggle.classList.contains('is-open')) {
-                    toggleMenu();
-                }
-            });
-        });
-    }
-
-    // Smooth scroll offset
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                e.preventDefault();
-                const offset = 80; // approximate nav height
-                const position = targetElement.getBoundingClientRect().top + window.scrollY - offset;
-                
-                window.scrollTo({
-                    top: position,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+  const toggle=document.querySelector('.menu-toggle');
+  const menu=document.getElementById('mobile-nav');
+  function close(){menu.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation');}
+  toggle.addEventListener('click',()=>{const opening=menu.hidden;menu.hidden=!opening;toggle.setAttribute('aria-expanded',String(opening));toggle.setAttribute('aria-label',opening?'Close navigation':'Open navigation');});
+  menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',close));
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!menu.hidden){close();toggle.focus();}});
+  document.addEventListener('click',event=>{if(!menu.hidden&&!event.target.closest('.site-header'))close();});
+  const desktop=window.matchMedia('(min-width: 601px)');desktop.addEventListener('change',event=>{if(event.matches)close();});
+  let scheduled=false;
+  const progress=document.querySelector('.reading-progress');
+  const update=()=>{const range=document.documentElement.scrollHeight-window.innerHeight;progress.style.width=`${range>0?window.scrollY/range*100:0}%`;scheduled=false;};
+  window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(update);}},{passive:true});
+  window.addEventListener('resize',update);update();
 }
