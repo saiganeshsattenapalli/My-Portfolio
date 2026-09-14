@@ -1,87 +1,10 @@
-/* 
-  Curiora Animations
-  Reveal, gentle breathing layers
-*/
-
-/* --- Scroll Reveal --- */
-.reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s var(--ease-standard), transform 0.8s var(--ease-standard);
-    will-change: opacity, transform;
-}
-
-.reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* --- Atmospheric Motion --- */
-/* The background remains mostly white. */
-.atmosphere {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    pointer-events: none;
-    overflow: hidden;
-    background-color: var(--color-background);
-}
-
-/* 
-  Subtle pale-blue fields behind the page.
-  Positioned near the top to provide refraction material for the navbar glass.
-*/
-.atmosphere-layer {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(140px);
-    opacity: 0.25;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-.layer-1 {
-    top: -20vh;
-    left: 10vw;
-    width: 80vw;
-    height: 80vw;
-    background: radial-gradient(circle, rgba(0, 113, 227, 0.05) 0%, rgba(255,255,255,0) 70%);
-    animation-name: breathe-1;
-    animation-duration: 22s;
-}
-
-.layer-2 {
-    top: -10vh;
-    right: -20vw;
-    width: 100vw;
-    height: 100vw;
-    background: radial-gradient(circle, rgba(0, 113, 227, 0.03) 0%, rgba(255,255,255,0) 70%);
-    animation-name: breathe-2;
-    animation-duration: 28s;
-}
-
-@keyframes breathe-1 {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(3%, 3%) scale(1.05); }
-}
-
-@keyframes breathe-2 {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(-3%, -2%) scale(1.08); }
-}
-
-/* Reduced Motion Override */
-@media (prefers-reduced-motion: reduce) {
-    .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-    .atmosphere-layer {
-        animation: none;
-    }
-}
+/* Curiora motion: progressive enhancement and one restrained orbital signature. */
+.reveal { opacity: 1; transform: none; }
+.js-motion .reveal { opacity: 0; transform: translateY(20px); transition: opacity 650ms var(--ease-standard),transform 650ms var(--ease-standard), translate var(--transition), box-shadow var(--transition), background var(--transition); transition-delay: var(--reveal-delay, 0ms), var(--reveal-delay, 0ms), 0ms, 0ms, 0ms; }
+.js-motion .reveal.is-visible { opacity: 1; transform: none; }
+.orbit-a { animation: signatureOrbitA 12s ease-in-out infinite; }
+.orbit-b { animation: signatureOrbitB 16s ease-in-out infinite; }
+@keyframes signatureOrbitA { 0%,100% { transform: rotate(-10deg) scale(1); } 50% { transform: rotate(-4deg) scale(1.03); } }
+@keyframes signatureOrbitB { 0%,100% { transform: rotate(16deg) scale(1); } 50% { transform: rotate(23deg) scale(.97); } }
+.hero-art[data-motion=paused] .signature-orbit { animation-play-state: paused; }
+@media(prefers-reduced-motion:reduce) { .js-motion .reveal { opacity: 1; transform: none; transition: none; } .signature-orbit { animation: none; } }

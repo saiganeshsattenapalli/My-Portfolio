@@ -1,63 +1,25 @@
-/* 
-  Curiora Base 
-  Resets, typography defaults, accessibility
-*/
-
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-    font-family: var(--font-sans);
-    background-color: var(--color-background);
-    color: var(--color-text);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-    line-height: 1.6;
-    overflow-x: hidden;
-    min-height: 100vh;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: color var(--transition);
-}
-
-button {
-    font-family: inherit;
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-/* Accessibility & Focus */
-:focus-visible {
-    outline: 3px solid rgba(0, 113, 227, 0.28);
-    outline-offset: 3px;
-    border-radius: 4px;
-}
-
-/* Layout Utilities */
-.container {
-    width: min(var(--max-width), 100% - 48px);
-    margin-inline: auto;
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto !important;
-    }
-    *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
+/* Curiora base: reset, global type, accessibility and layout utilities. */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 108px; color-scheme: light; }
+body { margin: 0; min-width: 320px; background: var(--color-background); color: var(--color-text); font-family: var(--font-sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+h1,h2,h3,h4,p { margin: 0; }
+h1,h2,h3,h4 { font-family: var(--font-sans); font-weight: 600; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; }
+a,button { -webkit-tap-highlight-color: transparent; }
+img,canvas { display: block; max-width: 100%; }
+[hidden] { display: none !important; }
+::selection { background: var(--color-accent-soft); color: var(--color-text); }
+:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 5px; border-radius: 4px; }
+body.modal-open { overflow: hidden; }
+.page-width,.container { width: min(var(--max-width), calc(100% - 64px)); margin-inline: auto; }
+.section-dark,.section-light { color: var(--color-text); background: var(--color-background); }
+.section-space { padding-block: 105px; }
+/* Existing emphasis hooks inherit Curiora type; section composition is deferred. */
+.serif-word { font-family: var(--font-sans); font-style: normal; font-weight: 600; letter-spacing: -.055em; color: var(--color-text); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; top: -80px; left: 24px; z-index: 150; padding: 12px 20px; background: var(--color-background); color: var(--color-accent); border-radius: var(--radius-sm); }
+.skip-link:focus { top: 20px; }
+@media(max-width:800px) { .section-space { padding-block: 80px; } }
+@media(max-width:600px) { .page-width,.container { width: calc(100% - 40px); } .section-space { padding-block: 64px; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } *,*::before,*::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }

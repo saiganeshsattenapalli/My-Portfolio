@@ -13,15 +13,40 @@
     --color-accent: #0071E3;
     --color-accent-hover: #0077ed;
 
+    /* Supporting materials. Brand colors above remain canonical. */
+    --color-environment: #F5F7FA;
+    --color-on-accent: #ffffff;
+    --color-border: rgba(17, 19, 24, 0.10);
+    --color-silver: #e7ecf2;
+    --color-accent-soft: rgba(0, 113, 227, 0.06);
+    --color-accent-line: rgba(0, 113, 227, 0.19);
+    --color-accent-refraction: rgba(0, 113, 227, 0.10);
+    --color-overlay: rgba(17, 19, 24, 0.40);
+    --color-shadow: rgba(17, 19, 24, 0.08);
+
+    /* Campus signature material and shared interaction states. */
+    --glass-core-center: #ffffff;
+    --glass-core-mid: rgba(235, 244, 255, 0.92);
+    --glass-core-edge: rgba(220, 235, 255, 0.65);
+    --glass-core-border: rgba(120, 170, 255, 0.22);
+    --color-surface-hover: rgba(255, 255, 255, 0.78);
+    --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.12);
+    --shadow-button: 0 8px 24px rgba(0, 113, 227, 0.18);
+    --shadow-button-hover: 0 10px 25px rgba(0, 113, 227, 0.35), 0 4px 10px rgba(0, 113, 227, 0.15);
+
     /* Liquid Glass Tokens */
+    --glass-bg-scrolled: rgba(255, 255, 255, 0.82);
     --glass-bg: rgba(255, 255, 255, 0.68);
     --glass-border: rgba(255, 255, 255, 0.78);
     --glass-highlight: rgba(255, 255, 255, 0.6);
     --glass-filter: blur(28px) saturate(180%);
 
     /* Shadows */
-    --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.04);
-    --shadow-blue: 0 12px 40px rgba(0, 113, 227, 0.06);
+    --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.06);
+    --shadow-blue: 0 20px 60px rgba(0, 90, 220, 0.12);
+
+    --shadow-medium: 0 18px 50px rgba(0, 28, 90, 0.08);
+    --shadow-signature: 0 35px 65px rgba(28, 61, 101, 0.10), 0 8px 22px rgba(28, 61, 101, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.95), inset 0 -2px 4px rgba(0, 113, 227, 0.04);
 
     /* Radii */
     --radius-sm: 14px;

@@ -1,0 +1,31 @@
+{
+  "browser": "152.0.7977.83",
+  "foundation": {
+    "sheets": [
+      "/static/css/design-system.css",
+      "/static/css/base.css",
+      "/static/css/components.css",
+      "/static/css/animations.css",
+      "/static/css/portfolio.css"
+    ],
+    "background": "rgb(245, 247, 250)",
+    "font": "-apple-system, \"system-ui\", \"SF Pro Display\", \"SF Pro Text\", \"Helvetica Neue\", Arial, sans-serif",
+    "emphasis": "normal",
+    "accent": "rgb(0, 113, 227)",
+    "glass": "rgba(255, 255, 255, 0.68)",
+    "blur": "blur(28px) saturate(1.8)",
+    "navWidth": 1120,
+    "canvas": 0,
+    "missingTokens": []
+  },
+  "checks": [
+    "pointer tilt and moving highlight/reset",
+    "button hover lift",
+    "pause/play keyboard",
+    "reduced motion",
+    "mobile navigation Escape",
+    "scroll glass",
+    "no overflow at 1440/1024/768/600/390/320",
+    "no JS errors"
+  ]
+}
