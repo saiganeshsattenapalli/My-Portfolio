@@ -21,7 +21,18 @@ def load_json(filename: str):
 async def home(request: Request):
     projects = load_json("projects.json")
     research = load_json("research.json")
-    return templates.TemplateResponse(request, "index.html", {"projects": projects, "research": research})
+    # The same records power server-rendered copy, the public API, and dialogs.
+    project_by_id = {project["id"]: project for project in projects}
+    project_facts = {
+        project["id"]: {item["id"]: item["text"] for item in project["capabilities"]}
+        for project in projects
+    }
+    return templates.TemplateResponse(request, "index.html", {
+        "projects": projects,
+        "project_by_id": project_by_id,
+        "project_facts": project_facts,
+        "research": research,
+    })
 
 @app.get("/projects")
 async def get_projects():

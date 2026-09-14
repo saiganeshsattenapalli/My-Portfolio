@@ -1,3 +1,4 @@
+{% from "components/project_content.html" import project_content %}
 <!doctype html>
 <html lang="en">
 
@@ -88,7 +89,8 @@
         </div>
         <p class="sr-only" id="filter-status" aria-live="polite"></p>
         <div class="project-grid">
-          <article class="project-card flagship reveal" data-categories="ai ml" id="campus-project">
+          <article class="project-card flagship reveal"
+            data-categories="{{ project_by_id['campus'].categories | join(' ') }}" id="campus-project">
             <div class="project-visual campus-visual" aria-label="Curiora CampusOS interface concept">
               <div class="visual-caption"><span>CURIORA / CAMPUSOS</span><span>INTERFACE STUDY</span></div>
               <div class="campus-window">
@@ -108,20 +110,10 @@
                 <div><b>One thoughtful system.</b><span>Text. Vision. Context.</span></div>
               </div>
             </div>
-            <div class="project-content">
-              <div class="project-overline"><span>01 / AI ENGINEERING</span><span
-                  class="project-status">Prototype</span></div>
-              <h3>Curiora CampusOS<span class="project-number">↗</span></h3>
-              <p>A campus platform with Curio at its core: local text and vision, a shared model gateway, and a
-                conversation-aware interface.</p>
-              <div class="tag-list"><span>Python</span><span>FastAPI</span><span>MLX</span><span>Multimodal AI</span>
-              </div>
-              <div class="project-actions"><button class="case-link" data-project="campus">Inside the project
-                  <span>↗</span></button><a href="https://github.com/saiganeshsattenapalli/Curiora-CampusOS"
-                  target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
-            </div>
+            {{ project_content(project_by_id["campus"]) }}
           </article>
-          <article class="project-card reveal" data-categories="data ml" id="pay-project">
+          <article class="project-card reveal" data-categories="{{ project_by_id['pay'].categories | join(' ') }}"
+            id="pay-project">
             <div class="project-visual pay-visual">
               <div class="visual-caption"><span>CURIORA / PAY</span><span>WORKFLOW STUDY</span></div>
               <div class="pay-stack">
@@ -134,19 +126,10 @@
               </div>
               <div class="pay-label"><i></i> PYTHON + POSTGRESQL</div>
             </div>
-            <div class="project-content">
-              <div class="project-overline"><span>02 / DATA & BACKEND</span><span
-                  class="project-status">Prototype</span></div>
-              <h3>Curiora Pay<span class="project-number">↗</span></h3>
-              <p>A financial workflow prototype connecting SQL data, Python services, CSV reporting, and an experimental
-                loan classifier.</p>
-              <div class="tag-list"><span>PostgreSQL</span><span>pandas</span><span>scikit-learn</span></div>
-              <div class="project-actions"><button class="case-link" data-project="pay">Inside the project
-                  <span>↗</span></button><a href="https://github.com/Curiora-intelligence/Curiora-Pay" target="_blank"
-                  rel="noopener noreferrer">GitHub ↗</a></div>
-            </div>
+            {{ project_content(project_by_id["pay"]) }}
           </article>
-          <article class="project-card reveal" data-categories="ai" id="research-project">
+          <article class="project-card reveal" data-categories="{{ project_by_id['research'].categories | join(' ') }}"
+            id="research-project">
             <div class="project-visual research-visual">
               <div class="visual-caption"><span>CURIORA / RESEARCH</span><span>VISION EXPLORATION</span></div>
               <div class="vision-art" aria-hidden="true">
@@ -157,32 +140,12 @@
               </div>
               <div class="research-label">A closer look at intelligence.</div>
             </div>
-            <div class="project-content">
-              <div class="project-overline"><span>03 / APPLIED AI EXPLORATION</span><span
-                  class="project-status">Experiment</span></div>
-              <h3>Curiora Research<span class="project-number">↗</span></h3>
-              <p>Exploring local vision-language inference with Qwen and MLX: how can a model turn an image into useful
-                context?</p>
-              <div class="tag-list"><span>Qwen VL</span><span>MLX</span><span>Python</span></div>
-              <div class="project-actions"><button class="case-link" data-project="research">Inside the project
-                  <span>↗</span></button><a href="https://github.com/saiganeshsattenapalli/Curiora-Research"
-                  target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
-            </div>
+            {{ project_content(project_by_id["research"]) }}
           </article>
-          <article class="project-card compact-project reveal" data-categories="data ml" id="foundations-project">
+          <article class="project-card compact-project reveal"
+            data-categories="{{ project_by_id['foundations'].categories | join(' ') }}" id="foundations-project">
             <div class="foundation-mark" aria-hidden="true"><span>{</span> f(x) <span>}</span></div>
-            <div class="project-content">
-              <div class="project-overline"><span>04 / LEARNING IN PUBLIC</span><span
-                  class="project-status">Practice</span></div>
-              <h3>The foundations matter.</h3>
-              <p>Python problem solving, data preparation, logistic regression, and the habit of understanding what the
-                code is actually doing.</p>
-              <div class="tag-list"><span>Python</span><span>NumPy</span><span>pandas</span><span>Feature
-                  preparation</span></div>
-              <div class="project-actions"><button class="case-link" data-project="foundations">Explore the practice
-                  <span>↗</span></button><a href="https://github.com/saiganeshsattenapalli" target="_blank"
-                  rel="noopener noreferrer">GitHub profile ↗</a></div>
-            </div>
+            {{ project_content(project_by_id["foundations"]) }}
           </article>
         </div>
         <div class="ecosystem-note">
@@ -190,12 +153,11 @@
             <h3>Different questions.<br>A shared way of building.</h3>
           </div>
           <div>
-            <p>CampusOS explores useful AI interfaces. Pay connects workflows and data. Research makes room for
-              experiments. A shared design language brings the ideas together.</p>
-            <div class="ecosystem-links"><a href="https://github.com/saiganeshsattenapalli/Curiora-Design-System"
-                target="_blank" rel="noopener noreferrer">Curiora Design System ↗</a><a
-                href="https://github.com/saiganeshsattenapalli/Curiora-Website" target="_blank"
-                rel="noopener noreferrer">Curiora Website ↗</a></div>
+            <p>Each implementation explores a different part of the same idea: connecting data, models, backend
+              systems, and a thoughtful interface. Shared visual primitives help the experiments feel connected.</p>
+            <div class="ecosystem-links">{% for project in projects if project.kind == "supporting_project" %}<a
+                href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer">{{ project.name }} ↗</a>{%
+              endfor %}</div>
           </div>
         </div>
         <div class="work-footnote"><span>Always evolving. Each project is a step toward a deeper understanding.</span><a
@@ -232,8 +194,8 @@
               <div class="skill-chips"><span>Python</span><span>SQL /
                   PostgreSQL</span><span>pandas</span><span>NumPy</span><span>CSV workflows</span></div>
               <div class="skill-evidence"><span>IN PRACTICE</span>
-                <p>Curiora Pay connects database queries to pandas dataframes and CSV statement generation.</p><a
-                  href="#pay-project">View the evidence ↗</a>
+                <p>{{ project_by_id.pay.name }}: {{ project_facts.pay.reporting }}</p><a href="#pay-project">View the
+                  evidence ↗</a>
               </div>
               <p class="learning-note"><span>DEVELOPING NEXT</span> Statistical analysis, clearer visual storytelling,
                 and deeper exploratory analysis.</p>
@@ -246,8 +208,8 @@
               <div class="skill-chips"><span>scikit-learn</span><span>Logistic regression</span><span>Feature
                   preparation</span><span>Python</span><span>Model serialization</span></div>
               <div class="skill-evidence"><span>IN PRACTICE</span>
-                <p>Curiora Pay includes a logistic-regression experiment trained on a small synthetic dataset. It is a
-                  learning exercise, not a validated lending model.</p><a href="#pay-project">Explore the experiment
+                <p>{{ project_by_id.pay.name }}: {{ project_facts.pay.classification }}</p><a
+                  href="#pay-project">Explore the experiment
                   ↗</a>
               </div>
               <p class="learning-note"><span>DEVELOPING NEXT</span> Reliable evaluation, stronger datasets, and
@@ -261,8 +223,8 @@
               <div class="skill-chips"><span>FastAPI</span><span>MLX</span><span>Local LLM
                   inference</span><span>Vision-language models</span><span>Runtime integration</span></div>
               <div class="skill-evidence"><span>IN PRACTICE</span>
-                <p>Curio connects text and vision through one model gateway, with MLX, CUDA, and CPU runtime adapters.
-                </p><a href="#campus-project">Meet Curio ↗</a>
+                <p>{{ project_by_id.campus.component }}: {{ project_facts.campus["model-integration"] }}</p><a
+                  href="#campus-project">Meet Curio ↗</a>
               </div>
               <p class="learning-note"><span>DEVELOPING NEXT</span> Model evaluation, efficient inference, and robust
                 agent workflows.</p>
@@ -362,6 +324,7 @@
         rel="noopener noreferrer">Explore on GitHub <span>↗</span></a>
     </div>
   </dialog>
+  <script id="project-data" type="application/json">{{ projects | tojson }}</script>
   <script type="module" src="/static/js/app.js"></script>
 </body>
 

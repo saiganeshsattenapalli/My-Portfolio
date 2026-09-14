@@ -1,0 +1,14 @@
+{# Copy and links come from projects.json; this macro owns presentation only. #}
+{% macro project_content(project) -%}
+<div class="project-content">
+    <div class="project-overline"><span>{{ project.card.number }} / {{ project.card.eyebrow }}</span><span
+            class="project-status">{{ project.status }}</span></div>
+    <h3>{{ project.name }}{% if project.card.show_arrow %}<span class="project-number">↗</span>{% endif %}</h3>
+    <p>{{ project.description }}</p>
+    <div class="tag-list">{% for tag in project.tags %}<span>{{ tag }}</span>{% endfor %}</div>
+    <div class="project-actions"><button class="case-link" data-project="{{ project.id }}">{{ project.card.details_label
+            }}
+            <span>↗</span></button><a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer">{{
+            project.card.link_label }} ↗</a></div>
+</div>
+{%- endmacro %}

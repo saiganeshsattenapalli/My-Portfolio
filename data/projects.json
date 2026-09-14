@@ -1,47 +1,200 @@
 [
   {
-    "name": "Curio",
-    "subtitle": "Curiora Intelligence",
-    "description": "A model-agnostic agentic intelligence system designed around perception, reasoning, action, and verification. Curio is the flagship product of the Curiora ecosystem.",
-    "essence": "Intelligence",
-    "tags": ["AI", "Agents", "LLMs", "FastAPI"],
-    "status": "Building",
-    "featured": true
-  },
-  {
-    "name": "Curiora Pay",
-    "subtitle": "Fintech",
-    "description": "An experimental fintech project exploring intelligent payment systems, backend architecture, and data-driven financial workflows.",
-    "essence": "Systems",
-    "tags": ["Python", "FastAPI", "SQL", "Fintech"],
-    "status": "Exploring",
-    "featured": false
-  },
-  {
+    "id": "campus",
     "name": "Curiora Campus",
-    "subtitle": "Campus Ecosystem",
-    "description": "A campus-focused intelligent ecosystem connecting students, resources, and opportunities through thoughtful infrastructure.",
-    "essence": "People",
-    "tags": ["Full-Stack", "FastAPI", "Community"],
-    "status": "Designing",
-    "featured": false
+    "component": "Curio",
+    "kind": "project",
+    "description": "Curio is the local AI prototype within Curiora Campus: a FastAPI backend, shared model gateway, and conversation interface. Text → GPT-OSS 20B. Vision / Multimodal → Qwen3-VL 8B. Both are pretrained model integrations.",
+    "github_url": "https://github.com/Curiora-intelligence/Curiora-Campus",
+    "link_kind": "repository",
+    "status": "Prototype",
+    "focus": "Backend & Applied AI",
+    "categories": ["backend", "ai"],
+    "featured": true,
+    "tech_stack": ["Python", "FastAPI", "Uvicorn", "Jinja2", "MLX", "MLX-LM", "MLX-VLM", "PyTorch", "Hugging Face Transformers", "HTML", "CSS", "JavaScript"],
+    "tags": ["Python", "FastAPI", "MLX", "PyTorch"],
+    "question": "How can a campus-oriented interface accept text and images through one understandable local AI backend?",
+    "capabilities": [
+      {"id": "model-integration", "text": "Routes text to pretrained GPT-OSS 20B and image requests to pretrained Qwen3-VL 8B through a shared model gateway."},
+      {"id": "runtime-selection", "text": "Includes MLX on Apple Silicon and PyTorch CUDA/CPU runtime adapters, with hardware detection and adapter selection implemented in code."},
+      {"id": "model-lifecycle", "text": "Uses lazy loading, gateway locks, and unloading of the previous model before switching between text and vision modes."},
+      {"id": "request-handling", "text": "Accepts text/image requests through an async FastAPI endpoint, checks declared image type and upload size, dispatches blocking inference to a thread pool, and removes temporary images."},
+      {"id": "conversation", "text": "Assigns conversation IDs and keeps text-message history in process memory for subsequent model prompts."},
+      {"id": "input-interface", "text": "Provides browser image uploads, camera-still capture, and browser speech input around the conversation interface."}
+    ],
+    "approach": "Keep the interface, model gateway, and runtime adapters separate, and account for model memory constraints when switching modes.",
+    "limitations": [
+      "This is a local prototype reviewed through source code. Cross-platform execution, performance, and production deployment have not been validated.",
+      "Model IDs are configured in code; eager MLX imports limit claims of universal CPU/CUDA startup.",
+      "Conversation history is process-local text. Durable memory, persistent image history, continuous video analysis, retrieval, tool execution, and independent outcome verification are not implemented.",
+      "The wider campus authentication, database, and reporting workflows remain scaffolded."
+    ],
+    "models": [
+      {"id": "text", "modality": "Text", "name": "GPT-OSS 20B", "role": "Pretrained model integration", "trained_by_author": false, "runtime_model_ids": {"mlx": "mlx-community/gpt-oss-20b-MXFP4-Q8", "pytorch": "openai/gpt-oss-20b"}},
+      {"id": "vision", "modality": "Vision / Multimodal", "name": "Qwen3-VL 8B", "role": "Pretrained model integration", "trained_by_author": false, "runtime_model_ids": {"mlx": "mlx-community/Qwen3-VL-8B-Instruct-8bit", "pytorch": "Qwen/Qwen3-VL-8B-Instruct"}}
+    ],
+    "architecture": {
+      "implemented": {
+        "status": "Implemented in source",
+        "stages": ["Input", "Validation", "Modality routing", "Model gateway", "Runtime", "Inference", "Response / cleanup"],
+        "note": "The active request path adds process-memory conversation text before dispatch and calls the model gateway directly. This describes code structure, not a deployment or benchmark result."
+      },
+      "product_direction": {
+        "status": "Product direction",
+        "stages": [
+          {"name": "Perceive", "status": "Foundation implemented", "scope": "Image input, camera stills, and vision-language inference."},
+          {"name": "Understand", "status": "Foundation implemented", "scope": "Prompted text and image responses; no separate semantic planning layer."},
+          {"name": "Route", "status": "Foundation implemented", "scope": "Modality and hardware routing; task and tool routing remain planned."},
+          {"name": "Act", "status": "Planned", "scope": "Tool execution and external action orchestration are not implemented."},
+          {"name": "Verify", "status": "Planned", "scope": "Independent factual and external-outcome verification are not implemented; input checks are a separate current capability."}
+        ]
+      }
+    },
+    "card": {"number": "01", "eyebrow": "BACKEND & APPLIED AI", "details_label": "Inside the project", "link_label": "GitHub", "show_arrow": true},
+    "reviewed_at": "2026-09-14"
   },
   {
+    "id": "pay",
+    "name": "Curiora Pay",
+    "component": null,
+    "kind": "project",
+    "description": "A Python, FastAPI, and PostgreSQL banking-workflow prototype with session-based routes, transaction operations, pandas CSV statement generation, and a logistic-regression learning demonstration using synthetic data.",
+    "github_url": "https://github.com/Curiora-intelligence/Curiora-Pay",
+    "link_kind": "repository",
+    "status": "Prototype",
+    "focus": "Backend, Data & ML",
+    "categories": ["backend", "data", "ml"],
+    "featured": false,
+    "tech_stack": ["Python", "FastAPI", "PostgreSQL", "Psycopg 3", "SQL", "pandas", "NumPy", "scikit-learn", "Argon2", "Fernet", "Jinja2", "HTML", "CSS", "JavaScript"],
+    "tags": ["PostgreSQL", "Psycopg 3", "pandas", "scikit-learn"],
+    "question": "How can transaction workflows produce queryable data, useful statements, and features for a small classification exercise?",
+    "capabilities": [
+      {"id": "authentication", "text": "Implements session-based login and protected dashboard routes, with parameterized credential queries and Argon2 password verification."},
+      {"id": "transactions", "text": "Implements account creation, balance retrieval, deposits, withdrawals, internal transfers, and transaction records through synchronous PostgreSQL/Psycopg operations."},
+      {"id": "reporting", "text": "Queries account transactions with SQL, builds a pandas dataframe, and writes CSV statements on the server."},
+      {"id": "feature-preparation", "text": "Retrieves account balance and SQL-derived transaction count, then constructs a NumPy feature array for model prediction."},
+      {"id": "classification", "text": "Fits a scikit-learn logistic-regression demonstration on eight synthetic examples. It is a learning exercise with no held-out evaluation or validated lending performance."},
+      {"id": "transaction-notes", "text": "Uses Fernet encryption for stored transaction notes."}
+    ],
+    "approach": "Keep data retrieval, business rules, and model assumptions explicit so a learning experiment remains understandable alongside the backend that supplies its features.",
+    "limitations": [
+      "This is a banking-workflow prototype, not a production bank, payment-network integration, or security/concurrency-audited system.",
+      "Request handlers and business operations are synchronous. A separate Psycopg AsyncConnection schema-setup helper is incomplete and is not wired into application startup.",
+      "Statement generation writes a local CSV; the current route returns an HTML message rather than downloading the file. The dedicated transaction-history route is unfinished.",
+      "The classifier uses hand-coded synthetic rows without held-out evaluation. Accuracy, repayment probability, or real credit-risk validity are not established."
+    ],
+    "models": [
+      {"id": "loan-demo", "modality": "Tabular classification", "name": "Logistic regression", "role": "Synthetic-data learning demonstration", "trained_by_author": true, "training_data": "Eight hand-coded examples with balance and transaction-count features", "evaluation": "No held-out evaluation"}
+    ],
+    "architecture": null,
+    "card": {"number": "02", "eyebrow": "BACKEND, DATA & ML", "details_label": "Inside the project", "link_label": "GitHub", "show_arrow": true},
+    "reviewed_at": "2026-09-14"
+  },
+  {
+    "id": "research",
     "name": "Curiora Research",
-    "subtitle": "AI Research",
-    "description": "Ongoing experiments and explorations in machine learning, deep learning, and neural network architectures.",
-    "essence": "Understanding",
-    "tags": ["ML", "Deep Learning", "Research"],
-    "status": "Ongoing",
-    "featured": false
+    "component": null,
+    "kind": "project",
+    "description": "A local visual-intelligence experiment integrating pretrained Qwen3-VL 8B through MLX and FastAPI, with lazy model loading, serialized inference, and prompts requesting image-grounded answers and explicit uncertainty.",
+    "github_url": "https://github.com/Curiora-intelligence/Curiora-Research",
+    "link_kind": "repository",
+    "status": "Experiment",
+    "focus": "Applied AI",
+    "categories": ["ai"],
+    "featured": false,
+    "tech_stack": ["Python", "FastAPI", "MLX", "MLX-VLM", "Jinja2", "HTML", "CSS", "JavaScript"],
+    "tags": ["Python", "FastAPI", "MLX", "MLX-VLM"],
+    "question": "How can a local vision-language model answer questions about an image while making uncertainty explicit?",
+    "capabilities": [
+      {"id": "vision-integration", "text": "Integrates pretrained Qwen3-VL 8B through MLX behind a FastAPI image-analysis endpoint."},
+      {"id": "inference-lifecycle", "text": "Uses lazy model loading, a model-loading lock, and an inference lock that serializes generation."},
+      {"id": "grounded-prompting", "text": "Prompts the model to use visible image evidence and acknowledge uncertainty; this is a prompting strategy rather than an independent verifier."},
+      {"id": "image-handling", "text": "Validates image uploads, dispatches analysis to a thread pool, and cleans up temporary image files."},
+      {"id": "input-interface", "text": "Provides image upload, camera-preview/still-image input, and browser speech-input interfaces."}
+    ],
+    "approach": "Study the interaction between image input, prompting, model lifecycle, and interface while keeping the scope of each experiment clear.",
+    "limitations": [
+      "This is a local image-inference experiment using an external pretrained model; foundation-model training, benchmarks, and production serving are not claimed.",
+      "Camera preview does not establish continuous video analysis. Research-agent and intelligent-reasoning features remain a roadmap.",
+      "Grounded prompting does not guarantee factual accuracy or independently verify an outcome."
+    ],
+    "models": [
+      {"id": "vision", "modality": "Vision / Multimodal", "name": "Qwen3-VL 8B", "role": "Pretrained model integration", "trained_by_author": false, "runtime_model_ids": {"mlx": "mlx-community/Qwen3-VL-8B-Instruct-8bit"}}
+    ],
+    "architecture": null,
+    "card": {"number": "03", "eyebrow": "APPLIED AI EXPLORATION", "details_label": "Inside the project", "link_label": "GitHub", "show_arrow": true},
+    "reviewed_at": "2026-09-14"
   },
   {
-    "name": "Curiora Intelligence Lab",
-    "subtitle": "Research Initiative",
-    "description": "A focused initiative for building and studying intelligent systems from first principles.",
-    "essence": "Exploration",
-    "tags": ["AI", "Research", "Systems"],
-    "status": "Forming",
-    "featured": false
+    "id": "foundations",
+    "name": "The foundations matter.",
+    "component": null,
+    "kind": "learning_collection",
+    "description": "Python problem solving, small asynchronous web-server exercises, SQL data preparation, and classification fundamentals developed through project practice.",
+    "github_url": "https://github.com/saiganeshsattenapalli",
+    "link_kind": "profile",
+    "status": "Practice",
+    "focus": "Backend, Data & ML foundations",
+    "categories": ["backend", "data", "ml"],
+    "featured": false,
+    "tech_stack": ["Python", "SQL", "pandas", "NumPy", "scikit-learn"],
+    "tags": ["Python", "SQL", "pandas", "NumPy"],
+    "question": "What changes when I implement a small version of an idea and inspect how it works?",
+    "capabilities": [
+      {"id": "programming-practice", "text": "Practices Python problem solving and small ASGI routing and asynchronous request-handler exercises."},
+      {"id": "data-practice", "text": "Practices SQL queries, pandas dataframes, NumPy feature arrays, and logistic-regression fundamentals through local project work."}
+    ],
+    "approach": "Start with a question, build a small version, inspect its behavior, and use the result to guide the next iteration.",
+    "limitations": ["This is a collection of learning exercises, not an additional product, internship, or original research result. The link opens the GitHub profile; it does not imply every local exercise is published."],
+    "models": [],
+    "architecture": null,
+    "card": {"number": "04", "eyebrow": "LEARNING IN PUBLIC", "details_label": "Explore the practice", "link_label": "GitHub profile", "show_arrow": false},
+    "reviewed_at": "2026-09-14"
+  },
+  {
+    "id": "design-system",
+    "name": "Curiora Design System",
+    "component": null,
+    "kind": "supporting_project",
+    "description": "Shared CSS tokens, glass surfaces, reusable components, and a pointer-reactive Curio signature for the Curiora visual language.",
+    "github_url": "https://github.com/Curiora-intelligence/Curiora-Design-System",
+    "link_kind": "repository",
+    "status": "Prototype",
+    "focus": "Supporting product engineering",
+    "categories": ["product"],
+    "featured": false,
+    "tech_stack": ["HTML", "CSS", "JavaScript"],
+    "tags": ["CSS", "JavaScript"],
+    "question": "How can related Curiora experiments share a coherent visual language?",
+    "capabilities": [{"id": "design-language", "text": "Defines typography, spacing, color and glass tokens, UI components, and a reduced-motion-aware pointer signature."}],
+    "approach": "Reuse shared visual primitives across product experiments.",
+    "limitations": ["Documentation files are largely empty; this is not a comprehensively documented component library."],
+    "models": [],
+    "architecture": null,
+    "card": null,
+    "reviewed_at": "2026-09-14"
+  },
+  {
+    "id": "website",
+    "name": "Curiora Website",
+    "component": null,
+    "kind": "supporting_project",
+    "description": "A FastAPI/Jinja2 landing-page prototype introducing the Curiora ecosystem with responsive product storytelling and its glass-and-orbit identity.",
+    "github_url": "https://github.com/Curiora-intelligence/Curiora-Website",
+    "link_kind": "repository",
+    "status": "Prototype",
+    "focus": "Supporting product engineering",
+    "categories": ["backend", "product"],
+    "featured": false,
+    "tech_stack": ["Python", "FastAPI", "Jinja2", "HTML", "CSS", "JavaScript"],
+    "tags": ["FastAPI", "Jinja2", "CSS"],
+    "question": "How can the Curiora ecosystem and its guiding ideas be explained clearly?",
+    "capabilities": [{"id": "product-storytelling", "text": "Uses FastAPI/Jinja2 templates, responsive layouts, scroll reveals, and a glass-and-orbit visual signature."}],
+    "approach": "Connect each project to the wider idea that curiosity creates intelligence.",
+    "limitations": ["Some product links are placeholders and secondary routes reference missing templates; a complete published site is not established."],
+    "models": [],
+    "architecture": null,
+    "card": null,
+    "reviewed_at": "2026-09-14"
   }
 ]

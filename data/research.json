@@ -1,22 +1,44 @@
 [
   {
-    "topic": "Machine Learning",
-    "description": "Learning the mathematical and computational foundations behind intelligent systems."
+    "id": "backend-systems",
+    "topic": "Backend systems",
+    "status": "Applied in prototypes",
+    "description": "Developing Python API, SQL, input-handling, and service-boundary skills through local project implementations.",
+    "project_ids": ["campus", "pay"],
+    "claim_scope": "Source-backed prototype work; no production scale or deployment claim."
   },
   {
-    "topic": "Deep Learning",
-    "description": "Working toward a first-principles understanding of neural networks and training."
+    "id": "pretrained-model-integration",
+    "topic": "Pretrained text and vision models",
+    "status": "Applied in prototypes",
+    "description": "Integrating external text and vision models and exploring their loading, runtime selection, and inference lifecycle.",
+    "project_ids": ["campus", "research"],
+    "model_refs": [{"project_id": "campus", "model_id": "text"}, {"project_id": "campus", "model_id": "vision"}, {"project_id": "research", "model_id": "vision"}],
+    "claim_scope": "Model names and runtime IDs resolve from projects.json; this is integration, not foundation-model training."
   },
   {
-    "topic": "Transformers & LLMs",
-    "description": "Studying attention, inference, model architectures, quantization, and modern language models."
+    "id": "data-ml-foundations",
+    "topic": "Data and machine learning foundations",
+    "status": "Learning through prototypes",
+    "description": "Practicing SQL reporting, pandas dataframes, feature preparation, and small classification exercises.",
+    "project_ids": ["pay", "foundations"],
+    "claim_scope": "Synthetic learning demonstrations; no evaluated predictive performance or validated credit scoring."
   },
   {
-    "topic": "Agentic AI",
-    "description": "Exploring systems that reason, use tools, take actions, and verify outcomes."
+    "id": "model-evaluation",
+    "topic": "Model evaluation and deeper ML foundations",
+    "status": "Learning goal",
+    "description": "Building toward stronger evaluation practices and a deeper understanding of neural networks and model behavior.",
+    "project_ids": [],
+    "claim_scope": "A learning direction, not a completed research result, benchmark, or training pipeline."
   },
   {
-    "topic": "On-Device AI",
-    "description": "Exploring multimodal models, efficient inference, and edge intelligence."
+    "id": "agentic-direction",
+    "topic": "Task routing, actions, and verification",
+    "status": "Product direction",
+    "description": "Exploring how the Curio product direction could extend beyond current modality routing and inference into tool actions and outcome verification.",
+    "project_ids": ["campus", "research"],
+    "architecture_ref": {"project_id": "campus", "field": "product_direction"},
+    "claim_scope": "Task/tool orchestration and independent outcome verification are planned, not implemented capabilities."
   }
 ]
