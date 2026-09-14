@@ -14,11 +14,17 @@
     "accent": "rgb(0, 113, 227)",
     "glass": "rgba(255, 255, 255, 0.68)",
     "blur": "blur(28px) saturate(1.8)",
-    "navWidth": 1120,
+    "navWidth": 1100,
+    "navHeight": 52,
+    "secondary": "rgb(17, 19, 24)",
+    "secondaryText": "rgb(255, 255, 255)",
     "canvas": 0,
     "missingTokens": []
   },
   "checks": [
+    "52px Campus navbar",
+    "black secondary buttons",
+    "breathing core pause and reduced motion",
     "pointer tilt and moving highlight/reset",
     "button hover lift",
     "pause/play keyboard",

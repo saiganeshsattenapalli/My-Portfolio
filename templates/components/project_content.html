@@ -6,9 +6,9 @@
     <h3>{{ project.name }}{% if project.card.show_arrow %}<span class="project-number">↗</span>{% endif %}</h3>
     <p>{{ project.description }}</p>
     <div class="tag-list">{% for tag in project.tags %}<span>{{ tag }}</span>{% endfor %}</div>
-    <div class="project-actions"><button class="case-link" data-project="{{ project.id }}">{{ project.card.details_label
+    <div class="project-actions"><button class="button button-primary button-small" data-project="{{ project.id }}">{{ project.card.details_label
             }}
-            <span>↗</span></button><a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer">{{
+            <span>↗</span></button><a class="button button-secondary button-small" href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer">{{
             project.card.link_label }} ↗</a></div>
 </div>
 {%- endmacro %}

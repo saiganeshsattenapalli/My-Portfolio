@@ -19,6 +19,9 @@ const output = path.resolve(__dirname, '../docs/previews/current');
     background:css('.hero').backgroundColor,font:css('body').fontFamily,emphasis:css('.hero h1 span').fontStyle,
     accent:css('.resume-nav').backgroundColor,glass:css('.nav-container').backgroundColor,
     blur:css('.nav-container').backdropFilter,navWidth:document.querySelector('.nav-container').getBoundingClientRect().width,
+    navHeight:document.querySelector('.nav-container').getBoundingClientRect().height,
+    secondary:css('.hero-actions .button-secondary').backgroundColor,
+    secondaryText:css('.hero-actions .button-secondary').color,
     canvas:document.querySelectorAll('canvas').length,
     missingTokens:[...new Set([...document.styleSheets].flatMap(sheet=>{
      const walk=rules=>[...rules].flatMap(rule=>rule.cssRules?walk(rule.cssRules):[...(rule.cssText||'').matchAll(/var\((--[\w-]+)\)/g)].map(m=>m[1]));return walk(sheet.cssRules);
@@ -29,7 +32,9 @@ const output = path.resolve(__dirname, '../docs/previews/current');
   assert.equal(foundation.background,'rgb(245, 247, 250)');assert.equal(foundation.accent,'rgb(0, 113, 227)');
   assert.equal(foundation.glass,'rgba(255, 255, 255, 0.68)');assert.equal(foundation.blur,'blur(28px) saturate(1.8)');
   assert.equal(foundation.emphasis,'normal');assert.equal(foundation.canvas,0);assert(foundation.font.includes('-apple-system'));
-  assert.deepEqual(foundation.missingTokens,[]);assert.equal(foundation.navWidth,1120);
+  assert.deepEqual(foundation.missingTokens,[]);assert.equal(foundation.navWidth,1100);assert.equal(foundation.navHeight,52);
+  assert.equal(foundation.secondary,'rgb(17, 19, 24)');assert.equal(foundation.secondaryText,'rgb(255, 255, 255)');
+  assert.equal(await page.locator('.chip-topline,.chip-bottomline').count(),0);
   await page.waitForFunction(()=>document.querySelector('.hero-art').dataset.motion==='running');
   const stage=page.locator('.hero-art'),box=await stage.boundingBox();
   await page.mouse.move(box.x+box.width*.8,box.y+box.height*.3);
@@ -37,9 +42,10 @@ const output = path.resolve(__dirname, '../docs/previews/current');
   assert(await stage.evaluate(el=>el.style.getPropertyValue('--mouse-x')!==''));
   await page.mouse.move(20,900);
   assert.equal(await stage.evaluate(el=>el.style.getPropertyValue('--mouse-x')),'');
-  await page.locator('.hero-actions .button').hover();
+  await page.locator('.hero-actions .button-primary').hover();
   await page.waitForFunction(()=>getComputedStyle(document.querySelector('.hero-actions .button')).transform !== 'none');
   await page.locator('#motion-toggle').click();assert.equal(await stage.getAttribute('data-motion'),'paused');
+  assert.equal(await page.locator('.signature-core').evaluate(el=>getComputedStyle(el).animationPlayState),'paused');
   await page.mouse.move(20,900);
   await page.locator('.hero').screenshot({path:path.join(output,'hero-chrome.png')});
   await page.locator('.nav-container').screenshot({path:path.join(output,'navbar-chrome.png')});
@@ -47,6 +53,7 @@ const output = path.resolve(__dirname, '../docs/previews/current');
   await page.emulateMedia({reducedMotion:'reduce'});
   await page.waitForFunction(()=>document.querySelector('.hero-art').dataset.motion==='paused');
   assert(await page.locator('#motion-toggle').isDisabled());
+  assert.equal(await page.locator('.signature-core').evaluate(el=>getComputedStyle(el).animationName),'none');
   assert.equal(await page.locator('.orbit-a').evaluate(el=>getComputedStyle(el).animationName),'none');
   await page.locator('#work').screenshot({path:path.join(output,'work-chrome.png')});
   await page.evaluate(()=>scrollTo(0,0));
@@ -60,7 +67,7 @@ const output = path.resolve(__dirname, '../docs/previews/current');
   await page.keyboard.press('Escape');assert(!(await page.locator('#mobile-nav').isVisible()));
   await page.evaluate(()=>scrollTo(0,1200));await page.waitForFunction(()=>document.querySelector('.site-header').classList.contains('is-scrolled'));
   assert.deepEqual(errors,[]);
-  fs.writeFileSync(path.join(output,'chrome-verification.json'),JSON.stringify({browser:await browser.version(),foundation,checks:['pointer tilt and moving highlight/reset','button hover lift','pause/play keyboard','reduced motion','mobile navigation Escape','scroll glass','no overflow at 1440/1024/768/600/390/320','no JS errors']},null,2)+'\n');
+  fs.writeFileSync(path.join(output,'chrome-verification.json'),JSON.stringify({browser:await browser.version(),foundation,checks:['52px Campus navbar','black secondary buttons','breathing core pause and reduced motion','pointer tilt and moving highlight/reset','button hover lift','pause/play keyboard','reduced motion','mobile navigation Escape','scroll glass','no overflow at 1440/1024/768/600/390/320','no JS errors']},null,2)+'\n');
   console.log('Curiora Chrome design checks passed. Screenshots: '+output);
  } finally {await browser.close();}
 })().catch(e=>{console.error(e);process.exit(1);});

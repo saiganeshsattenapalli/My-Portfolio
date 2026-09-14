@@ -399,30 +399,6 @@
     font-size: 10px;
 }
 
-.project-actions a {
-    color: var(--color-text-secondary);
-    font-size: 9px;
-}
-
-.project-actions a:hover {
-    color: var(--color-text-secondary);
-}
-
-.case-link {
-    font-size: 10px;
-    font-weight: 500;
-    background: none;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    text-align: left;
-}
-
-.case-link>span {
-    font-size: 14px;
-}
-
 .pay-visual {
     background: var(--color-surface);
     color: var(--color-text-secondary);
@@ -670,15 +646,6 @@
     line-height: 1.6;
 }
 
-.work-footnote a {
-    color: var(--color-text-secondary);
-    white-space: nowrap;
-}
-
-.work-footnote a span {
-    padding-left: 15px;
-}
-
 .capabilities {
     background: var(--color-surface);
 }
@@ -827,11 +794,6 @@
     line-height: 1.7;
     color: var(--color-text-secondary);
     margin: 8px 0;
-}
-
-.skill-evidence a {
-    font-size: 9px;
-    color: var(--color-text-secondary);
 }
 
 .learning-note {
@@ -1095,21 +1057,6 @@
     color: var(--color-text);
 }
 
-.email-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 35px;
-    font-size: 17px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--color-border);
-    margin-top: 37px;
-    color: var(--color-text);
-}
-
-.email-link span {
-    font-size: 26px;
-}
-
 .contact-email {
     display: block;
     font-size: 9px;
@@ -1121,35 +1068,6 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     border-block: 1px solid var(--color-border);
-}
-
-.contact-links a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 10px;
-    padding: 24px 28px;
-    border-right: 1px solid var(--color-border);
-    color: var(--color-text-secondary);
-    transition: background .2s;
-}
-
-.contact-links a:first-child {
-    padding-left: 0;
-}
-
-.contact-links a:last-child {
-    border: 0;
-    padding-right: 0;
-}
-
-.contact-links a:hover {
-    background: var(--color-accent-soft);
-}
-
-.contact-links span {
-    font-size: 17px;
-    color: var(--color-text-secondary);
 }
 
 footer {
@@ -1410,15 +1328,6 @@ dialog {
         gap: 10px;
     }
 
-    .case-link {
-        font-size: 9px;
-        gap: 10px;
-    }
-
-    .project-actions a {
-        font-size: 8px;
-    }
-
     .pay-stack {
         inset: 70px 12% 30px;
     }
@@ -1619,11 +1528,6 @@ dialog {
         padding-block: 55px;
     }
 
-    .contact-links a {
-        padding: 22px 17px;
-        font-size: 9px;
-    }
-
     footer {
         flex-wrap: wrap;
         gap: 18px;
@@ -1818,15 +1722,6 @@ dialog {
         padding: 6px 8px;
     }
 
-    .project-actions a {
-        font-size: 9px;
-    }
-
-    .case-link {
-        font-size: 10px;
-        gap: 15px;
-    }
-
     .visual-caption {
         font-size: 6px;
         top: 20px;
@@ -1901,11 +1796,6 @@ dialog {
         display: block;
         font-size: 9px;
         line-height: 1.8;
-    }
-
-    .work-footnote a {
-        display: inline-block;
-        margin-top: 14px;
     }
 
     .capabilities .section-heading {
@@ -2002,10 +1892,6 @@ dialog {
 
     .skill-evidence>span {
         font-size: 7px;
-    }
-
-    .skill-evidence a {
-        font-size: 10px;
     }
 
     .learning-note {
@@ -2172,44 +2058,12 @@ dialog {
         font-size: .99em;
     }
 
-    .email-link {
-        font-size: 17px;
-        margin-top: 29px;
-    }
-
     .contact-email {
         font-size: 9px;
     }
 
     .contact-links {
         grid-template-columns: 1fr 1fr;
-    }
-
-    .contact-links a {
-        font-size: 10px;
-        padding: 21px !important;
-        border-bottom: 1px solid var(--color-border);
-    }
-
-    .contact-links a:nth-child(2) {
-        border-right: 0;
-    }
-
-    .contact-links a:nth-child(n+3) {
-        border-bottom: 0;
-    }
-
-    .contact-links a:first-child,
-    .contact-links a:nth-child(3) {
-        padding-left: 0 !important;
-    }
-
-    .contact-links a:nth-child(even) {
-        padding-right: 0 !important;
-    }
-
-    .contact-links a:last-child {
-        border-left: 1px solid var(--color-border);
     }
 
     footer {
@@ -2287,10 +2141,6 @@ dialog {
     margin-top: 19px;
     font-size: 9px;
     color: var(--color-text-secondary);
-}
-
-.ecosystem-links a:hover {
-    text-decoration: underline;
 }
 
 @media(max-width:600px) {
@@ -2426,75 +2276,6 @@ dialog {
     border-color: var(--color-border);
     transform: rotate(16deg);
 }
-
-.signature-glass {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 242px;
-    height: 160px;
-    margin: -80px 0 0 -121px;
-    padding: 21px 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-lg);
-    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--glass-core-center) 0%, var(--glass-core-mid) 38%, var(--glass-core-edge) 100%);
-    backdrop-filter: var(--glass-filter);
-    -webkit-backdrop-filter: var(--glass-filter);
-    box-shadow: var(--shadow-signature);
-    transform: rotateX(calc(8deg + var(--tilt-x, 0deg))) rotateY(calc(-12deg + var(--tilt-y, 0deg))) rotateZ(-7deg);
-    transition: transform var(--duration-fast) var(--ease-smooth), box-shadow var(--duration-normal) ease;
-    pointer-events: none;
-}
-
-.signature-glass::before {
-    content: '';
-    position: absolute;
-    inset: 5px;
-    border: 1px solid var(--glass-highlight);
-    border-radius: 27px;
-    pointer-events: none;
-}
-
-.chip-topline,
-.chip-bottomline {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.chip-mark {
-    font-size: 30px;
-    font-weight: 650;
-    letter-spacing: -.08em;
-    color: var(--color-accent);
-    line-height: 1;
-}
-
-.chip-topline>span:last-child {
-    font-size: 6px;
-    letter-spacing: .09em;
-    line-height: 1.6;
-    text-align: right;
-    color: var(--color-text-secondary);
-}
-
-.signature-word {
-    font-size: 32px;
-    font-weight: 500;
-    letter-spacing: .22em;
-    color: var(--color-text);
-}
-
-.chip-bottomline {
-    font-size: 6px;
-    color: var(--color-text-secondary);
-    letter-spacing: .025em;
-}
-
-.chip-bottomline i,
 .orbit-label i,
 .scene-caption i {
     width: 4px;
@@ -2606,10 +2387,7 @@ dialog {
     background: var(--color-accent);
     color: var(--color-on-accent);
 }
-
-.project-actions a,
-.ecosystem-links,
-.email-link {
+.ecosystem-links{
     color: var(--color-accent);
 }
 
@@ -2635,17 +2413,6 @@ dialog::backdrop {
 
     .hero-intro {
         font-size: 14px;
-    }
-
-    .signature-glass {
-        width: 210px;
-        height: 145px;
-        margin: -72px 0 0 -105px;
-        padding: 19px 22px;
-    }
-
-    .signature-word {
-        font-size: 27px;
     }
 
     .scene-caption {
@@ -2700,16 +2467,6 @@ dialog::backdrop {
         left: 8%;
         right: 5%;
     }
-
-    .signature-glass {
-        width: 230px;
-        height: 153px;
-        margin: -76px 0 0 -115px;
-    }
-
-    .signature-word {
-        font-size: 30px;
-    }
 }
 
 @media(max-width:600px) {
@@ -2763,31 +2520,6 @@ dialog::backdrop {
     .hero-art {
         height: 340px;
         margin-top: 0;
-    }
-
-    .signature-glass {
-        width: 192px;
-        height: 130px;
-        margin: -65px 0 0 -96px;
-        padding: 17px 20px;
-        border-radius: 26px;
-    }
-
-    .signature-glass::before {
-        border-radius: 22px;
-    }
-
-    .signature-word {
-        font-size: 25px;
-    }
-
-    .chip-mark {
-        font-size: 25px;
-    }
-
-    .chip-topline>span:last-child,
-    .chip-bottomline {
-        font-size: 5px;
     }
 
     .orbit-label {
@@ -2871,10 +2603,6 @@ dialog::backdrop {
     border-color: var(--color-accent-line);
 }
 
-.signature-glass {
-    border-color: var(--glass-core-border);
-}
-
 .about-monogram {
     border-radius: var(--radius-lg);
     background: radial-gradient(ellipse at 50% 30%, var(--glass-core-mid), var(--color-surface) 70%);
@@ -2890,20 +2618,11 @@ dialog::backdrop {
     color: var(--color-accent);
 }
 
-.project-actions a:hover,
-.case-link:hover {
-    color: var(--color-accent-hover);
-}
-
 @media (hover: hover) and (pointer: fine) {
     .project-card:hover {
         translate: 0 -4px;
         background: var(--color-surface-hover);
         box-shadow: var(--shadow-hover);
-    }
-
-    .hero-art[data-motion=running]:hover .signature-glass {
-        box-shadow: var(--shadow-signature), var(--shadow-blue);
     }
 }
 
@@ -2911,4 +2630,25 @@ dialog::backdrop {
     .project-card:hover {
         translate: none;
     }
+}
+/* Campus-style glass core: one quiet object, with light and depth rather than card UI. */
+.signature-core { position: absolute; left: 50%; top: 50%; width: 196px; height: 100px; margin: -50px 0 0 -98px; z-index: 2; }
+.signature-glass { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-pill); border: 1px solid var(--glass-core-border); background: radial-gradient(ellipse at var(--mouse-x, 50%) var(--mouse-y, 38%), var(--glass-core-center), var(--glass-core-mid) 44%, var(--glass-core-edge)); box-shadow: var(--shadow-signature); backdrop-filter: var(--glass-filter); -webkit-backdrop-filter: var(--glass-filter); transform: rotateX(calc(5deg + var(--tilt-x, 0deg))) rotateY(calc(-6deg + var(--tilt-y, 0deg))); transition: transform var(--duration-normal) var(--ease-smooth); transform-style: preserve-3d; }
+.signature-word { font-size: 14px; font-weight: 650; letter-spacing: .22em; padding-left: .22em; color: var(--color-text); transform: translateZ(12px); }
+.signature-shadow { position: absolute; width: 175px; height: 26px; left: 50%; top: calc(50% + 80px); margin-left: -87px; background: radial-gradient(ellipse, var(--color-accent-refraction), transparent 70%); filter: blur(9px); pointer-events: none; }
+.hero-actions { gap: 14px; flex-wrap: wrap; }
+.project-actions { justify-content: flex-start; gap: 12px; flex-wrap: wrap; }
+.ecosystem-links { gap: 12px; }
+.work-footnote { flex-wrap: wrap; gap: 18px; }
+.contact-cta { margin-top: 34px; }
+.contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding-block: 28px; border-block: 1px solid var(--color-border); }
+.contact-links .button { font-size: 12px; }
+.skill-evidence .button { margin-top: 10px; }
+@media(max-width:600px) {
+ .signature-core { width: 166px; height: 86px; margin: -43px 0 0 -83px; }
+ .signature-word { font-size: 12px; }
+ .signature-shadow { top: calc(50% + 67px); width: 145px; margin-left: -72px; }
+ .hero-actions .button { font-size: 11px; padding: 14px 19px; gap: 15px; }
+ .contact-links .button { flex: 1 1 140px; font-size: 11px; padding-inline: 16px; }
+ .project-actions .button { font-size: 10px; padding-inline: 14px; }
 }
