@@ -33,7 +33,7 @@ The CSS loads in a deliberate order:
 | `static/css/animations.css` | Scroll reveals and the two signature orbit animations |
 | `static/css/portfolio.css` | Portfolio section layouts and token-based materials |
 
-The navbar follows Campus’s slim 52px height and 1100px maximum width. Action links use Azure primary buttons and black secondary buttons.
+The navbar follows Campus’s slim 52px height and 1100px maximum width. Action links use Azure primary buttons and glass secondary buttons.
 
 The Curio signature is a simple glass capsule with a pointer-positioned highlight and bounded 3D tilt. An eight-second floating cycle, synchronized soft ground shadow, and slow ambient breathing give it a quiet sense of depth; the detailed card labels and inset frame have been removed. Campus supplies the 12s/16s orbit rhythm; the Curiora Design System supplies button/card lift; Research informs navigation feedback; the birthday project informs short reveal staggering and arrow feedback. These patterns are adapted into the portfolio, with no personal birthday content or media included. See the [source comparison](docs/curiora-consistency.md).
 

@@ -33,7 +33,7 @@ const output = path.resolve(__dirname, '../docs/previews/current');
   assert.equal(foundation.glass,'rgba(255, 255, 255, 0.68)');assert.equal(foundation.blur,'blur(28px) saturate(1.8)');
   assert.equal(foundation.emphasis,'normal');assert.equal(foundation.canvas,0);assert(foundation.font.includes('-apple-system'));
   assert.deepEqual(foundation.missingTokens,[]);assert.equal(foundation.navWidth,1100);assert.equal(foundation.navHeight,52);
-  assert.equal(foundation.secondary,'rgb(17, 19, 24)');assert.equal(foundation.secondaryText,'rgb(255, 255, 255)');
+  assert.equal(foundation.secondary,'rgba(255, 255, 255, 0.68)');assert.equal(foundation.secondaryText,'rgb(0, 113, 227)');
   assert.equal(await page.locator('.chip-topline,.chip-bottomline').count(),0);
   await page.waitForFunction(()=>document.querySelector('.hero-art').dataset.motion==='running');
   const stage=page.locator('.hero-art'),box=await stage.boundingBox();
@@ -67,7 +67,7 @@ const output = path.resolve(__dirname, '../docs/previews/current');
   await page.keyboard.press('Escape');assert(!(await page.locator('#mobile-nav').isVisible()));
   await page.evaluate(()=>scrollTo(0,1200));await page.waitForFunction(()=>document.querySelector('.site-header').classList.contains('is-scrolled'));
   assert.deepEqual(errors,[]);
-  fs.writeFileSync(path.join(output,'chrome-verification.json'),JSON.stringify({browser:await browser.version(),foundation,checks:['52px Campus navbar','black secondary buttons','breathing core pause and reduced motion','pointer tilt and moving highlight/reset','button hover lift','pause/play keyboard','reduced motion','mobile navigation Escape','scroll glass','no overflow at 1440/1024/768/600/390/320','no JS errors']},null,2)+'\n');
+  fs.writeFileSync(path.join(output,'chrome-verification.json'),JSON.stringify({browser:await browser.version(),foundation,checks:['52px Campus navbar','Campus glass secondary buttons','breathing core pause and reduced motion','pointer tilt and moving highlight/reset','button hover lift','pause/play keyboard','reduced motion','mobile navigation Escape','scroll glass','no overflow at 1440/1024/768/600/390/320','no JS errors']},null,2)+'\n');
   console.log('Curiora Chrome design checks passed. Screenshots: '+output);
  } finally {await browser.close();}
 })().catch(e=>{console.error(e);process.exit(1);});

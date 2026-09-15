@@ -13,8 +13,8 @@
     --color-accent: #0071E3;
     --color-accent-hover: #0077ed;
 
-    --color-secondary-button: #111318;
-    --color-secondary-button-hover: #292c32;
+    --color-secondary-border: rgba(0, 113, 227, 0.3);
+    --color-secondary-hover: rgba(0, 113, 227, 0.05);
     --nav-max-width: 1100px;
     --nav-height: 52px;
 
