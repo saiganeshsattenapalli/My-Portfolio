@@ -2,7 +2,7 @@
 
 A personal portfolio exploring Python backend systems, applied AI, data, and machine learning. Built with **FastAPI, Jinja2, and vanilla HTML/CSS/JavaScript**.
 
-[GitHub profile](https://github.com/saiganeshsattenapalli) · [Resume PDF](static/downloads/saiganesh-sattenapalli-resume.pdf) · [Project evidence](docs/resume-evidence.md)
+[Live portfolio](https://saiganesh-portfolio.onrender.com) · [GitHub profile](https://github.com/saiganeshsattenapalli) · [Resume PDF](static/downloads/saiganesh-sattenapalli-resume.pdf) · [Project evidence](docs/resume-evidence.md)
 
 ![Portfolio preview](docs/previews/current/hero-chrome.png)
 
@@ -33,7 +33,7 @@ The CSS loads in a deliberate order:
 | `static/css/animations.css` | Scroll reveals and the two signature orbit animations |
 | `static/css/portfolio.css` | Portfolio section layouts and token-based materials |
 
-The navbar follows Campus’s slim 52px height and 1100px maximum width. Action links use Azure primary buttons and glass secondary buttons.
+The navbar follows Campus’s slim 52px height and 1100px maximum width. Action links use Azure primary buttons and glass secondary buttons with Azure text and a fine blue border.
 
 The Curio signature is a simple glass capsule with a pointer-positioned highlight and bounded 3D tilt. An eight-second floating cycle, synchronized soft ground shadow, and slow ambient breathing give it a quiet sense of depth; the detailed card labels and inset frame have been removed. Campus supplies the 12s/16s orbit rhythm; the Curiora Design System supplies button/card lift; Research informs navigation feedback; the birthday project informs short reveal staggering and arrow feedback. These patterns are adapted into the portfolio, with no personal birthday content or media included. See the [source comparison](docs/curiora-consistency.md).
 
@@ -81,4 +81,13 @@ A native FastAPI [Render Blueprint](render.yaml) is included:
 
 Import the repository into your Render account and review the free web service configuration. The build command is `pip install -r requirements.txt`; the start command is `uvicorn main:app --host 0.0.0.0 --port $PORT`. No application secrets or database are required. Automatic redeployment is disabled in the blueprint so later commits can be reviewed before a manual deploy.
 
-This follows [Render's FastAPI deployment instructions](https://render.com/docs/deploy-fastapi). Free instances have [free-tier limitations](https://render.com/docs/free), including idle spin-down. The blueprint is deployment-ready configuration; it is not evidence that a live service exists. No live deployment URL has been verified yet.
+This follows [Render's FastAPI deployment instructions](https://render.com/docs/deploy-fastapi). Free instances have [free-tier limitations](https://render.com/docs/free), including idle spin-down. The portfolio is deployed at https://saiganesh-portfolio.onrender.com. The service uses the repository’s `main` branch; deploy new commits from Render’s Manual Deploy menu.
+
+## Curiora repositories
+
+- [Curiora Campus](https://github.com/Curiora-intelligence/Curiora-Campus) — Curio text and multimodal application prototype.
+- [Curiora Pay](https://github.com/Curiora-intelligence/Curiora-Pay) — banking-workflow and data/ML learning prototype.
+- [Curiora Research](https://github.com/Curiora-intelligence/Curiora-Research) — standalone local vision experiment.
+- [Curiora Design System](https://github.com/Curiora-intelligence/Curiora-Design-System) — shared CSS and interaction primitives.
+- [Curiora Website](https://github.com/Curiora-intelligence/Curiora-Website) — ecosystem landing-page application.
+- [Curiora Devops](https://github.com/saiganeshsattenapalli/Curiora-Devops) — early scaffold; no operational agent is implemented yet.
