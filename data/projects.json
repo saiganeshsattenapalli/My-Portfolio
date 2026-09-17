@@ -138,7 +138,7 @@
     "categories": ["backend", "data", "ml"],
     "featured": false,
     "tech_stack": ["Python", "SQL", "pandas", "NumPy", "scikit-learn"],
-    "tags": ["Python", "SQL", "pandas", "NumPy"],
+    "tags": ["Python", "SQL", "pandas", "NumPy", "PyTorch", "MLX", "Scikit-Learn", "FastAPI"],
     "question": "What changes when I implement a small version of an idea and inspect how it works?",
     "capabilities": [
       {"id": "programming-practice", "text": "Practices Python problem solving and small ASGI routing and asynchronous request-handler exercises."},
